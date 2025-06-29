@@ -14,7 +14,7 @@ const AddTutorial = ({ getTutorials }) => {
 
   const postTutorial = async (newTutorial) => {
     try {
-      await axios.post(process.env.REACT_APP_URL, newTutorial);
+      await axios.post(import.meta.env.VITE_URL, newTutorial);
     } catch (error) {
       console.warn(error);
     } finally {

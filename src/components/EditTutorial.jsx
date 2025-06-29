@@ -17,7 +17,7 @@ const EditTutorial = ({ editData, getTutorials }) => {
 
   const editTutorials = async (tutorial) => {
     try {
-      await axios.put(`${process.env.REACT_APP_URL}${editData.id}/`, tutorial);
+      await axios.put(`${import.meta.env.VITE_URL}${editData.id}/`, tutorial);
     } catch (error) {
       console.log(error);
     } finally {

@@ -7,9 +7,11 @@ const Home = () => {
   const [tutorials, setTutorials] = useState([]);
   const getTutorials = async () => {
     try {
-      const { data } = await axios.get(process.env.REACT_APP_API_URL);
+      const { data } = await axios.get(import.meta.env.VITE_URL);
       setTutorials(data);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   };
   useEffect(() => {
     getTutorials();

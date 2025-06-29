@@ -8,7 +8,7 @@ const TutorialList = ({ tutorials, getTutorials }) => {
   const [editData, setEditData] = useState('');
   const deleteTutorials = async (id) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_URL}${id}/`);
+      await axios.delete(`${import.meta.env.VITE_URL}${id}/`);
     } catch (error) {
       console.warn(error);
     } finally {
